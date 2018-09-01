@@ -28,14 +28,12 @@ int main() {
     sort(arr.begin(),arr.end(),compare);
     vector <int> cum_cnt;
     cum_cnt.push_back(arr[0].count);
-    for (i = 1; i < n; i++) {
+    for (i = 1; i < n; i++) 
         cum_cnt.push_back(cum_cnt[i - 1] + arr[i].count);
-    }
     vector<int>::iterator lower,lower1;
     int m = cum_cnt[n - 1];
     double q1,q3;
     int s = m/2;
-    //cout << s << " " << m << endl; 
     if (m % 2 == 1) {
         if (s % 2 == 1) {
             lower = lower_bound(cum_cnt.begin(),cum_cnt.end(),s/2 + 1);
@@ -62,15 +60,12 @@ int main() {
         else {
             lower = lower_bound(cum_cnt.begin(),cum_cnt.end(),s/2);
             lower1 = lower_bound(cum_cnt.begin(),cum_cnt.end(),s/2 + 1);
-            //cout << *lower << " " << *lower1 << endl;
             q1 = (arr[lower - cum_cnt.begin()].element + arr[lower1 - cum_cnt.begin()].element)/2;
             lower = lower_bound(cum_cnt.begin(),cum_cnt.end(),s + s/2);
             lower1 = lower_bound(cum_cnt.begin(),cum_cnt.end(),s + s/2 + 1);
             q3 = (arr[lower - cum_cnt.begin()].element + arr[lower1 - cum_cnt.begin()].element)/2;
         }
     }
-    //cout << q3 << " " << q1 << endl;
-    //lower = lower_bound(cum_cnt.begin(),cum_cnt.end(),6);
     printf("%.1f",q3 - q1);
     return 0;
 }
