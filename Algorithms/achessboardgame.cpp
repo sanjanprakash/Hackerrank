@@ -32,7 +32,6 @@ int main()
         int y = stoi(xy[1]);
 
         string result = chessboardGame(x, y);
-
         fout << result << "\n";
     }
 
