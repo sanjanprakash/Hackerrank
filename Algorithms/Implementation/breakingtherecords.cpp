@@ -31,9 +31,9 @@ int main() {
     vector < int > result = getRecord(s);
     string separator = "", delimiter = " ";
     for(auto val: result) {
-        cout<<separator<<val;
+        cout << separator << val;
         separator = delimiter;
     }
-    cout<<endl;
+    cout << endl;
     return 0;
 }
