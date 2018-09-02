@@ -25,9 +25,8 @@ int main() {
     int n;
     cin >> n;
     vector<int> s(n);
-    for(int s_i = 0; s_i < n; s_i++){
+    for(int s_i = 0; s_i < n; s_i++)
        cin >> s[s_i];
-    }
     vector < int > result = getRecord(s);
     string separator = "", delimiter = " ";
     for(auto val: result) {
