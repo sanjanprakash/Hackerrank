@@ -26,7 +26,7 @@ node * insert(node * root, int value)
 					}
 					else {
 						root -> left = new node;
-                        root -> left -> data = value;
+                       	root -> left -> data = value;
 						root -> left -> left = NULL;
 						root -> left -> right = NULL;
 					}
